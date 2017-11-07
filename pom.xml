@@ -8,5 +8,33 @@
     <artifactId>event-stream-architecture-example</artifactId>
     <version>0.1.0</version>
 
+    <packaging>pom</packaging>
 
+    <modules>
+        <module>esae-notes</module>
+    </modules>
+
+    <properties>
+        <spring.boot.version>1.5.4.RELEASE</spring.boot.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- Compile Scope -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-web</artifactId>
+                <version>${spring.boot.version}</version>
+            </dependency>
+            <!-- End compile scope -->
+            <!-- Test scope -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-starter-test</artifactId>
+                <version>${spring.boot.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <!-- End test scope -->
+        </dependencies>
+    </dependencyManagement>
 </project>
