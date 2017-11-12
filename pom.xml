@@ -15,7 +15,11 @@
     </modules>
 
     <properties>
-        <spring.boot.version>1.5.4.RELEASE</spring.boot.version>
+        <dockerfile.maven.plugin.version>1.3.6</dockerfile.maven.plugin.version>
+        <java.source.version>1.8</java.source.version>
+        <java.target.version>1.8</java.target.version>
+        <maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+        <spring.boot.version>1.5.8.RELEASE</spring.boot.version>
     </properties>
 
     <dependencyManagement>
@@ -37,4 +41,18 @@
             <!-- End test scope -->
         </dependencies>
     </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>${maven.compiler.plugin.version}</version>
+                <configuration>
+                    <source>${java.source.version}</source>
+                    <target>${java.target.version}</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
